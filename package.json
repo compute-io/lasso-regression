@@ -1,0 +1,55 @@
+{
+  "name": "compute-lasso-regression",
+  "version": "0.0.0",
+  "description": "LASSO regression (regularized regression with L1 penalty).",
+  "author": {
+    "name": "Philipp Burckhardt",
+    "email": "pburckhardt@outlook.com"
+  },
+  "contributors": [
+    {
+      "name": "Philipp Burckhardt",
+      "email": "pburckhardt@outlook.com"
+    }
+  ],
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "codecov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/compute-io/lasso-regression.git"
+  },
+  "keywords": [
+    "compute.io",
+    "compute",
+    "computation",
+    "mathematics",
+    "math",
+    "statistics",
+    "stats",
+    "lasso",
+    "regression",
+    "regularization",
+    "L1 penalty",
+    "prediction"
+  ],
+  "bugs": {
+    "url": "https://github.com/compute-io/lasso-regression/issues"
+  },
+  "dependencies": {
+    "compute-incrspace": "^1.0.2",
+    "dstructs-matrix": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "3.x.x",
+    "codecov.io": "^0.1.5",
+    "istanbul": "^0.3.0",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "mocha": "2.x.x"
+  },
+  "license": "MIT"
+}
