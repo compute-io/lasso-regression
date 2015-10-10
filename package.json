@@ -41,8 +41,13 @@
   },
   "dependencies": {
     "compute-incrspace": "^1.0.2",
+    "compute-to-matrix": "^1.0.0",
     "compute-transpose": "^1.0.0",
-    "dstructs-matrix": "^2.0.0"
+    "dstructs-matrix": "^2.0.0",
+    "validate.io-array-array": "^1.0.0",
+    "validate.io-array-like": "^1.0.1",
+    "validate.io-matrix-like": "^1.0.2",
+    "validate.io-number-primitive": "^1.0.0"
   },
   "devDependencies": {
     "chai": "3.x.x",
