@@ -23,4 +23,4 @@ for ( i = 0; i < y.length; i++ ) {
 		randomNormal();
 }
 
-console.log( lasso( x, y, 1 ) );
+console.log( lasso( y, x, 0.4 ) );
