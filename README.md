@@ -7,18 +7,25 @@ LASSO Regression
 Given a response variable `Y` and a vector of predictors `X`, a linear regression model is defined as
 
 <div class="equation" align="center" data-raw-text="\mathbb{E}\left[ Y \mid X = x \right ] = \beta_0 + \beta^\intercal xm" data-equation="eq:linear_model">
-	<img src="path" alt="Linear Regression Function">
+	<img src="https://cdn.rawgit.com/compute-io/lasso-regression/58e3da8ef7542420ea394b219a585850820ba236/docs/img/eqn1.svg" alt="Linear Regression Function">
 	<br>
 </div>
 
 where `beta_0` is the intercept coefficient and `beta` a vector of predictor coefficients. Given data points `(x_1,y_1),...,(x_N,y_N)`, this package estimates the regression coefficients using the LASSO. This L1 penalized regression penalizes non-zero coefficients and its fit is obtained by solving the following problem:
 
 <div class="equation" align="center" data-raw-text="\min_{\beta_0,\beta} \frac{1}{2N} \sum_{i=1}^N \left( y_i - \beta_0 - \beta^\intercal x_i \right)^2 + \lambda ||\beta||_1" data-equation="eq:lasso_problem">
-	<img src="path" alt="LASSO problem">
+	<img src="https://cdn.rawgit.com/compute-io/lasso-regression/12c74db2cd80edb9061b0a419c743ee83f085a30/docs/img/eqn2.svg" alt="LASSO problem">
 	<br>
 </div>
 
-The `lambda` parameter determines the size of the penalty placed on the L1 norm of the `beta` vector. When `lambda = 0`, the problem reduces to multiple linear regression, whereas `lambda -> ∞` will result in an intercept-only model.
+The `lambda` parameter determines the size of the penalty placed on the L1 norm of the `beta` vector. The L1 norm is defined as
+
+<div class="equation" align="center" data-raw-text="||\beta||_1 = \sum_{i=1}^p |\beta_i|" data-equation="eq:l1_norm">
+	<img src="https://cdn.rawgit.com/compute-io/lasso-regression/12c74db2cd80edb9061b0a419c743ee83f085a30/docs/img/eqn3.svg" alt="L1 Norm of Betas">
+	<br>
+</div>
+
+When `lambda = 0`, the problem reduces to multiple linear regression, whereas `lambda -> ∞` will result in an intercept-only model.
 
 As we observe, for non-zero penalties the LASSO shrinks coefficient estimates to zero, which makes the LASSO perform model selection: Increasing `lambda`, predictors that do not contribute much in explaining `Y` will tend to get removed from the model.
 
