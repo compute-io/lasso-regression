@@ -1,17 +1,18 @@
 'use strict';
 
-var matrix = require( 'dstructs-matrix' ),
-	lasso = require( './../lib' ),
+var lasso = require( './../lib' ),
 	randomNormal = require( 'distributions-normal-random' ),
-	data,
 	x, y,
+	out,
 	i;
 
 // Set seed of random number generator:
 randomNormal.seed = 117;
 
-data = randomNormal( 1000 );
-x = matrix( data, [100,10] );
+// Create a 100 x 10 matrix of standard normal variates
+x = randomNormal( [100,10], {
+	'dtype':'float64'
+});
 
 // Generate response variables
 y = new Float64Array( 100 );
@@ -23,4 +24,5 @@ for ( i = 0; i < y.length; i++ ) {
 		randomNormal();
 }
 
-console.log( lasso( y, x, 0.4 ) );
+out = lasso( x, y, 0.4 );
+console.dir( out );
